@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "kafkajs": "^2.2.4",
-    "mongodb": "^6.1.0"
+    "mongodb": "^6.1.0",
+    "mysql2": "^3.6.1"
+  },
+  "scripts": {
+    "start:consumers": "node mongo-consumer.js node mysql-consumer.js"
   }
 }

@@ -3,11 +3,11 @@ const { Kafka } = require('kafkajs');
 const { MongoClient } = require('mongodb');
 
 const kafka = new Kafka({
-  clientId: 'cosumer-test',
+  clientId: 'mongo-cosumer-test',
   brokers: ['kafka:9092']  // because outside the docker container
 });
 
-const consumer = kafka.consumer({ groupId: "GX" });
+const consumer = kafka.consumer({ groupId: "GY" });
 
 const MONGODB_URI = "mongodb://mongodb:27017";  
 const DB_NAME = "Kafka-test"; 
@@ -15,7 +15,7 @@ const COLLECTION_NAME = "messages";
 
 const consumirMensagens = async () => {
   await consumer.connect();
-  await consumer.subscribe({ topic: 'testante', fromBeginning: true });
+  await consumer.subscribe({ topic: 'testante', });
 
  
   const client = new MongoClient(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
