@@ -5,6 +5,13 @@
     "mysql2": "^3.6.1"
   },
   "scripts": {
-    "start:consumers": "node mongo-consumer.js node mysql-consumer.js"
+    "start:mongo-consumer": " node ./dist/mongo-consumer.js",
+    "start:mysql-consumer": " node ./dist/mysql-consumer.js",
+    "start:producer": " node ./dist/producer.js",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   }
 }
